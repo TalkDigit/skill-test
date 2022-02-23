@@ -1,0 +1,111 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class SettingSeeder extends Seeder
+{
+    static $table = 'settings';
+
+
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table(static::$table)->truncate();
+
+        DB::table(static::$table)->insert([
+
+            // General
+            [
+                'key'   => 'maintenance_mode',
+                'value' => false,
+            ],
+            [
+                'key'   => 'analytics',
+                'value' => false,
+            ],
+
+            // Brand
+            [
+                'key'   => 'brand_name',
+                'value' => 'Talk Solutions',
+            ],
+            [
+                'key'   => 'company_name',
+                'value' => 'Talk Solutions',
+            ],
+            [
+                'key'   => 'email_address',
+                'value' => 'hello@talk.com.tr',
+            ],
+            [
+                'key'   => 'telephone',
+                'value' => '+44 7444 444 444',
+            ],
+            [
+                'key'   => 'address',
+                'value' => '144 Fulham Road',
+            ],
+            [
+                'key'   => 'postcode',
+                'value' => 'SW6 SX6',
+            ],
+            [
+                'key'   => 'city',
+                'value' => 'London',
+            ],
+            [
+                'key'   => 'country',
+                'value' => 'United Kingdom',
+            ],
+
+            // Social media
+            [
+                'key'   => 'facebook_url',
+                'value' => 'https://www.facebook.com/talk',
+            ],
+            [
+                'key'   => 'twitter_url',
+                'value' => 'https://twitter.com/talk',
+            ],
+            [
+                'key'   => 'instagram_url',
+                'value' => 'https://www.instagram.com/talk',
+            ],
+            [
+                'key'   => 'linkedin_url',
+                'value' => 'https://www.linkedin.com/company/talk',
+            ],
+            [
+                'key'   => 'youtube_url',
+                'value' => 'https://www.youtube.com/c/talk',
+            ],
+
+            // SEO
+            [
+                'key'   => 'indexing',
+                'value' => true,
+            ],
+            [
+                'key'   => 'meta_keywords',
+                'value' => true,
+            ],
+
+            // Localisation
+            [
+                'key'   => 'default_language_code',
+                'value' => 'en',
+            ],
+            [
+                'key'   => 'default_time_zone',
+                'value' => 1,
+            ],
+        ]);
+    }
+}
